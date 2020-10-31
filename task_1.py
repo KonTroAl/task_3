@@ -12,3 +12,21 @@
 то реализуйте ф-цию-декоратор и пусть она считает время
 И примените ее к двум своим функциям.
 """
+import time
+
+def my_list(n):
+    start_val = time.time()
+    lis = [i for i in range(1, n)]
+    end_val = time.time()
+    return end_val - start_val
+
+def my_dict(n):
+    start_val = time.time()
+    dict = {a: b for a in range(n) for b in range(n)}
+    end_val = time.time()
+    return end_val - start_val
+
+
+n = 10000
+print(f"Операция по генерации списка заняла: {my_list(n)}")
+print(f"Операция по генерации словаря заняла: {my_dict(n)}")
